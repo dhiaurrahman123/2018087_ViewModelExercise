@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                        TampilLayout()
                 }
             }
         }
@@ -135,17 +135,10 @@ fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 
     )
 }
+@Composable
+fun TampilEmail(){
 
-
-
-
-
-
-
-
-
-
-
+}
 @Composable
 fun TextHasil(namanya: String,telponnya: String,jenisnya: String){
     ElevatedCard {
