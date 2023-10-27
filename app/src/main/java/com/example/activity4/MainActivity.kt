@@ -45,13 +45,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Activity4Theme {
+            Activity4{
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                        TampilLayout()
+                     TampilForm()
                 }
             }
         }
@@ -74,21 +74,17 @@ fun TampilLayout(
         }
     }
 }
-
-fun OutlinedTextField(value: Any, onValueChange: Boolean, keyboardOptions: KeyboardOptions, shape: CornerBasedShape, modifier: Modifier, label: () -> Unit, onValueChange1: () -> Unit) {
-
-}
-
 @Composable
 fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 
     var textNama by remember (mutableStateOf(""))
     var textTlp by remember (mutableStateOf(""))
+    var textemail by remember
 
     val context = LocalContext.current
-    val dataForm: DataForm
+    val DataForm: DataForm
     val uiState by CobaViewData.uiState.collectAsState()
-    dataForm = uiState
+    DataForm = uiState
 
     OutlinedTextField(
         value = textNama
@@ -141,6 +137,7 @@ fun TampilEmail(emailnya:String){
                 .fillMaxWidth()
         }
 }
+
 @Composable
 fun TextHasil(namanya: String, telponnya: String, jenisnya: String, emailnya: Any){
     ElevatedCard {
@@ -163,6 +160,10 @@ fun TextHasil(namanya: String, telponnya: String, jenisnya: String, emailnya: An
         modifier = Modifier
             .padding(horizontal =  10.dp, vertical = 4.dp)
     )
+}
+@Composable
+fun Status(){
+
 }
 
 @Composable
