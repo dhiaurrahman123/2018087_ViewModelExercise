@@ -1,7 +1,6 @@
 package com.example.activity4
 
 import android.os.Bundle
-import android.provider.SyncStateContract.Columns
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,26 +28,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 ///import com.example.activity4.ui.theme.Activity4Theme
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.ViewModel
 import com.example.activity4.data.DataForm
 import com.example.activity4.ui.theme.CobaViewData
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-
 
 
 class MainActivity : ComponentActivity() {
@@ -135,21 +125,24 @@ fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
     ///}
     Spacer(modifier = Modifier.height(100.dp))
     TextHasil(
-        namanya = CobaViewData.namaUst,
+        namanya = CobaViewData.namaUsr,
         telponnya = CobaViewData.noTlp ,
-        jenisnya = CobaViewData.jenisKL)
+        jenisnya = CobaViewData.jenisKL ,
+        emailnya = CobaViewData.Email)
             }
 
     )
 }
 @Composable
-fun TampilEmail(){
+fun TampilEmail(emailnya:String){
         Box {
-            Text(text = "email : ")
+            Text(text = "email : "+ emailnya )
+            var modifier = Modifier
+                .fillMaxWidth()
         }
 }
 @Composable
-fun TextHasil(namanya: String,telponnya: String,jenisnya: String){
+fun TextHasil(namanya: String, telponnya: String, jenisnya: String, emailnya: Any){
     ElevatedCard {
         var elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
         var modifier = Modifier
