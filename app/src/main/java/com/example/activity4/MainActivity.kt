@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
@@ -82,6 +84,11 @@ fun TampilLayout(
         }
     }
 }
+
+fun OutlinedTextField(value: Any, onValueChange: Boolean, keyboardOptions: KeyboardOptions, shape: CornerBasedShape, modifier: Modifier, label: () -> Unit, onValueChange1: () -> Unit) {
+
+}
+
 @Composable
 fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 
@@ -137,7 +144,9 @@ fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 }
 @Composable
 fun TampilEmail(){
-
+        Box {
+            Text(text = "email : ")
+        }
 }
 @Composable
 fun TextHasil(namanya: String,telponnya: String,jenisnya: String){
@@ -194,5 +203,5 @@ fun SelectJK(
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-
+        TampilLayout()
 }

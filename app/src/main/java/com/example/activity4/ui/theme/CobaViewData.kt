@@ -17,6 +17,8 @@ class CobaViewData: ViewModel() {
         private set
     var jenisKl:String by mutableStateOf("")
         private set
+    var Email:String by mutableStateOf("")
+        private set
     private val _uiState = MutableStateFlow(DataForm())
     val uiState:StateFlow<DataForm> = _uiState.asStateFlow()
 
