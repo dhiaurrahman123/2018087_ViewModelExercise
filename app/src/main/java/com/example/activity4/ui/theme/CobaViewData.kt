@@ -31,6 +31,9 @@ class CobaViewData: ViewModel() {
     fun setJenisK(pilihJk: String){
         _uiState.update { currentState -> currentState.copy(sex= pilihJk)}
     }
+    fun setStatus(pilihStatus:String){
+        _uiState.update { currentState -> currentState.copy(status) }
+    }
 
 
 }

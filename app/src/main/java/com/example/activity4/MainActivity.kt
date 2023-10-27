@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Activity4{
+            Activity4Theme{
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -59,7 +59,8 @@ class MainActivity : ComponentActivity() {
 }
 
 fun TampilLayout(
-    modifier:Modifier = Modifier
+    modifier: Modifier = Modifier,
+    Alignment: Any
 ){
     Card(
         modifier = modifier,
@@ -79,7 +80,7 @@ fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 
     var textNama by remember (mutableStateOf(""))
     var textTlp by remember (mutableStateOf(""))
-    var textemail by remember
+    var textemail by remember(mutableStateOf(""))
 
     val context = LocalContext.current
     val DataForm: DataForm
@@ -131,11 +132,15 @@ fun TampilForm(cobaViewModel: ViewModel = ViewModel()){
 }
 @Composable
 fun TampilEmail(emailnya:String){
+    ElevatedCard {
+        CardDefaults.cardElevation(defaultElevation = 6.dp)
+        Modifier = Modifier
         Box {
             Text(text = "email : "+ emailnya )
             var modifier = Modifier
                 .fillMaxWidth()
         }
+    }
 }
 
 @Composable
